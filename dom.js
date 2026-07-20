@@ -219,28 +219,38 @@ newParagraph.className = "content highlight";
 // Creating Element
 
 const article = document.querySelector("article");
-article.appendChild(newParagraph);  // Add at end
+
+article.appendChild(newParagraph);  
 
 // Insert before another element
+
 const firstParagraph = article.querySelector("p");
+
 article.insertBefore(newParagraph, firstParagraph);
 
 // Modern insertion methods
-article.prepend(newParagraph);         
-article.append(newParagraph);          
-firstParagraph.before(newParagraph);   
-firstParagraph.after(newParagraph);
 
+article.prepend(newParagraph);   
+
+// article.append(newParagraph);   
+
+// firstParagraph.before(newParagraph);  
+
+// firstParagraph.after(newParagraph);
 
 // Remove an element
-const footer = document.querySelector("nav");
-nav.remove();
+
+const footer = document.querySelector("footer");
+
+footer.remove();
 
 // Remove child
 
 const form = document.querySelector("form");
-const lastcontact = form.querySelector("input:last-child");
-lastcontact.parentElement.removeChild(lastcontact);
+
+const emailInput = form.querySelector("#email");
+
+emailInput.parentElement.removeChild(emailInput);
 
 // Clear all children
 
@@ -251,16 +261,22 @@ while (article.firstChild) {
 }
 
 const navItem = document.querySelector(".nav-link").parentElement;
-const clone = navItem.cloneNode(true);  // true = deep clone
+
+const clone = navItem.cloneNode(true);  
+
 clone.querySelector("a").textContent = "New Link";
+
 document.querySelector(".nav-list").appendChild(clone);
 
 
 // Cloning Elements
 
 const navItem = document.querySelector(".nav-link").parentElement;
-const clone = navItem.cloneNode(true);  // true = deep clone
+
+const clone = navItem.cloneNode(true); 
+
 clone.querySelector("a").textContent = "New Link";
+
 document.querySelector(".nav-list").appendChild(clone);
 
 // Create a function that adds a new nav item dynamically:
@@ -269,7 +285,7 @@ function addNavItem(text, href) {
 
        const li = document.createElement("li");
 
-       const li = document.createElement("li");
+       const link = document.createElement("a");
 
        link.textContent = "text";
 
@@ -281,16 +297,16 @@ function addNavItem(text, href) {
 
        doucument.querySelector(".nav-link").appendChild(li);
 
-       addNavItem("Blog", "/blog");
-       addNavItem("Portfolio", "/portfolio");
 }
+
+       addNavItem("Blog", "/blog");
+       
+       addNavItem("Portfolio", "/portfolio");
 
 
 // Lesson 10 Tasks
 
 // Event Listeners
-
-const form = document.querySelector("form");
 
 const button = document.createElement("button");
 
@@ -299,13 +315,17 @@ button.textContent = "Click Me";
 document.body.appendChild(button);
 
  // Adding event listeners
+
 button.addEventListener("click", function() {
+
     console.log("Button clicked!");
+
 });
 
 // Named function (can be removed later)
 
 function handleClick() {
+
     console.log("Handled!");
 }
 button.addEventListener("click", handleClick);
@@ -314,12 +334,9 @@ button.removeEventListener("click", handleClick);
 
 // Mouse events
 
-const button = document.querySelector("button");
-
-
 button.addEventListener("click", function () {
 
-console.log("button clicked!");
+    console.log("button clicked!");
 
 });
 
@@ -356,7 +373,7 @@ button.addEventListener("mousemove", function () {
 const form = document.querySelector("form");
 
 
-const input = document.querySelector("name");
+const input = document.querySelector("#name");
 
 
 
@@ -381,8 +398,6 @@ input.addEventListener("keypress", function () {
 
 // Form events
 
-const form = document.querySelector ("form");
-
 const input = document.querySelector("#name");
 
 
@@ -402,12 +417,12 @@ input.addEventListener("focus", function () {
 
 input.addEventListener("blur", function () {
 
-    console.log("input lost function!");
+    console.log("input lost focus!");
 
 });
 
 
-input.addEventListener("input ", function () {
+input.addEventListener("input", function () {
 
     console.log("input value changed!");
 
@@ -472,7 +487,7 @@ const decreaseButton = document.querySelector("#decrease")
 
 });
 
-resetButton.addEventListener("click", function () {
+    resetButton.addEventListener("click", function (reset) {
 
     count = 0;
         count --
@@ -505,15 +520,15 @@ button.addEventListener("click", function(event) {
 // Keyboard events
 
 const form = document.querySelector("form");
+
 const nameInput = document.querySelector("#name");
-const form = document.querySelector("#email");
+
+const emailInput = document.querySelector("#email");
+
 
 document.addEventListener("keydown", function(event) {
 
-}
-
 // Ctrl+S
-
 
 if (event.ctrlKey && event.key === "s") {
 
@@ -524,7 +539,8 @@ if (event.ctrlKey && event.key === "s") {
 }
 
 // Escape
-if (event.Key === "Escape") {
+
+if (event.key === "Escape") {
 
     nameInput.value = "";
 
@@ -543,34 +559,45 @@ if (event.ctrlKey && event.key === "Enter") {
 
 }
 
+});
+
 // Add the JavaScript
 
 document.getElementById("grandparent").addEventListener("click", () => {
+
     console.log("Grandparent clicked");
+
 });
 
 document.getElementById("parent").addEventListener("click", () => {
+
     console.log("Parent clicked");
 });
 
 document.getElementById("child").addEventListener("click", () => {
+
     console.log("Child clicked");
+
 });
 
 
 // Understanding Bubbling
 
 document.getElementById("grandparent").addEventListener("click", () => {
+
     console.log("Grandparent clicked");
 });
 
 document.getElementById("parent").addEventListener("click", () => {
+
     console.log("Parent clicked");
 });
 
 document.getElementById("child").addEventListener("click", () => {
+
     console.log("Child clicked");
 
+});
 // Event Delegation
 
 function handleClick(event) {
@@ -580,11 +607,11 @@ function handleClick(event) {
 
 const items = document.querySelectorAll("li");
 
-});
+
 
 // BAD
 
-const items = document.querySelectorAll("li");22
+const items = document.querySelectorAll("li");
 
 items.forEach(item => {
 
@@ -606,48 +633,67 @@ document.querySelector("ul").addEventListener("click", function (event) {
 // Complete Form Validation
 
 const form = document.getElementById("contact-form");
+
 const nameInput = document.getElementById("name");
+
 const emailInput = document.getElementById("email");
 
-nameInput.addEventListener("input", function(event) {
-    const value = event.target.value;
     
    // Real-time validation
+
 nameInput.addEventListener("input", function(event) {
+
     const value = event.target.value;
     
     if (value.length < 2) {
+
         showError(nameInput, "Name must be at least 2 characters");
+
     } else {
+
         clearError(nameInput);
+
     }
 });
 
 emailInput.addEventListener("input", function(event) {
+
     const value = event.target.value;
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     
     if (!emailRegex.test(value)) {
+
         showError(emailInput, "Please enter a valid email");
+
     } else {
+
         clearError(emailInput);
     }
 });
 
 // Form submission
+
 form.addEventListener("submit", function(event) {
-    event.preventDefault();  // Stop form from submitting
+
+    event.preventDefault();  
     
     // Get all form data
+
     const formData = new FormData(form);
+
     const data = Object.fromEntries(formData);
     
     console.log("Form data:", data);
     
     // Validate all fields
+
     if (isValid(data)) {
+
         // Submit via fetch or show success
+
         showSuccess("Form submitted successfully!");
+
         form.reset();
     }
 });
@@ -660,13 +706,16 @@ function showError(input, message) {
     let error = input.nextElementSibling;
 
     if (!error || !error.classList.contains("error-message")) {
+
     error = document.createElement("p");
+
     error.classList.add("error-message");
+
     input.after(error);
 
 }
 
-error.textContent = messagr;
+error.textContent = message; 
 
 }
 
@@ -675,8 +724,12 @@ function clearError(input) {
     input.classList.remove("error");
     
     const error = input.nextElementSibling;
-    ir (error && error.classlist.contains("eror-message")){
+
+    if (error && error.classList.contains("error-message")) {
+
         error.remove();
         
+}
+
 }
 
