@@ -1,22 +1,32 @@
 
 // getElementById - returns single element
+
 const header = document.getElementById("main-header");
+
     console.log("getElementById:", header);
 
 // getElementsByClassName - returns HTMLCollection (live)
+
 const contents = document.getElementsByClassName("content");
+
     console.log("getElementsByClassName:", contents);
 
 // getElementsByTagName - returns HTMLCollection (live)
+
 const paragraphs = document.getElementsByTagName("p");
+
     console.log("getElementsByTagName:", paragraphs);
 
 // querySelector - returns first match
+
 const firstLink = document.querySelector(".nav-link");
+
     console.log("querySelector:", firstLink);
 
 // querySelectorAll - returns NodeList (static)
+
 const allLinks = document.querySelectorAll(".nav-link");
+
      console.log("querySelectorAll:", allLinks);
 
 // Practice: Select these elements
@@ -94,8 +104,10 @@ null
 console.log(article.previousElementSibling); 
 
 // Descendants
+
 const navLinks = nav.querySelector("a");
-console.log(avLinks);  
+
+   console.log(avLinks);  
 
 
  // Modifying Content
@@ -131,7 +143,7 @@ const article = document.querySelector("article");
 
 article.innerHTML = `
 
-     My Updated Article
+    My Updated Article
 
     <p>This is my contentnew content.</p>
 `;
@@ -166,8 +178,8 @@ link.href = "https://example.com";
 
 console.log(link.hasAttribute("target"));
 
-
 // Remove attribute
+
 link.removeAttribute("target")
 
 // Data attributes
@@ -187,13 +199,17 @@ const nav = document.querySelector("nav");
 // Inline styles
 
 nav.style.backgroundColor = "#1f0101";
+
 nav.style.padding = "20px";
+
 nav.style.borderRadius = "5px";
 
 // Multiple styles (use classes instead when possible!)
 
 Object.assign(nav.style,{
+
     color: "white",
+
     padding: "20px"
 });
 
@@ -283,25 +299,25 @@ document.querySelector(".nav-list").appendChild(clone);
 
 function addNavItem(text, href) {
 
-       const li = document.createElement("li");
+const li = document.createElement("li");
 
-       const link = document.createElement("a");
+const link = document.createElement("a");
 
-       link.textContent = "text";
+    link.textContent = "text";
 
-       link.href = href;
+    link.href = href;
 
-       link.className = nav-link;
+    link.className = nav-link;
 
-       link.appendChild(link);
+    link.appendChild(link);
 
-       doucument.querySelector(".nav-link").appendChild(li);
+    doucument.querySelector(".nav-link").appendChild(li);
 
 }
 
-       addNavItem("Blog", "/blog");
+    addNavItem("Blog", "/blog");
        
-       addNavItem("Portfolio", "/portfolio");
+    addNavItem("Portfolio", "/portfolio");
 
 
 // Lesson 10 Tasks
@@ -474,7 +490,7 @@ const decreaseButton = document.querySelector("#decrease")
     increaseButton.addEventListener("click", function () {
 
     count ++;
-    Counter.textContent - count
+   Counter.textContent - count
 
 });
 
